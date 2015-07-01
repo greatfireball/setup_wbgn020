@@ -29,3 +29,7 @@ PASS=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 ENCRYPTED=$(echo "$PASS" | mkpasswd -m sha-512 --stdin)
 useradd  -m -s /bin/bash -c "Marie Hieke" -g neurobio -u 2000 -p "$ENCRYPTED" mah15aa
 
+# And print the account name and the password
+echo "mah15aa $PASS"
+
+
