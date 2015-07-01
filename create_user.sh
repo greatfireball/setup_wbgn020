@@ -18,3 +18,14 @@ sudo adduser frf53jh sudo
 passwd frf53jh --expire
 # And print the account name and the password
 echo "frf53jh $PASS"
+
+## Install user Marie
+
+# Add the group neurobio
+addgroup --gid 1006 neurobio
+
+# Add Frank with a new password
+PASS=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
+ENCRYPTED=$(echo "$PASS" | mkpasswd -m sha-512 --stdin)
+useradd  -m -s /bin/bash -c "Marie Hieke" -g neurobio -u 2000 -p "$ENCRYPTED" mah15aa
+
