@@ -4,7 +4,7 @@
 apt-get update && apt-get install whois
 
 # Add the group genomics
-addgroup --gid genomics
+addgroup --gid 1001 genomics
 
 # Add Frank with a new password
 PASS=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
