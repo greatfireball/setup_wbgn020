@@ -6,4 +6,6 @@ DRIVES=$(ls -l /dev/disk/by-id/ | grep sd[bcdef] | grep scsi | grep -v -- '-part
 # create a zpool
 zpool create -df -o ashift=12 -O compression=on storage raidz2 $DRIVES
 
+# create an additional zfs device
+zfs create storage/neurobio
 
