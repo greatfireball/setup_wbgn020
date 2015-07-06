@@ -12,4 +12,4 @@ apt-add-repository --yes ppa:zfs-native/stable
 apt-get update
 
 # install ZoL
-apt-get install --yes ubuntu-zfs
+apt-get install --yes ubuntu-zfs zfs-auto-snapshot
